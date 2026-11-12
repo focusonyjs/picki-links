@@ -16,7 +16,7 @@ PAGES = {
         "kind": "shop",
         "title": "베스트피키", "tag": "생활 꿀템",
         "handle": "@bestpicki",
-        "bio": "영상에 나온 그 물건, 영상 날짜로 찾으세요.",
+        "bio": "영상 속 그 제품, 여기 다 모아뒀어요.",
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [],
@@ -25,7 +25,7 @@ PAGES = {
         "kind": "stay",
         "title": "스테이피키", "tag": "숙소 골라드림",
         "handle": "@stay.picki",
-        "bio": "영상에 나온 숙소, 날짜별 가격은 여기서 비교하세요.",
+        "bio": "영상 속 그 숙소, 가격은 여기서 비교해 보세요.",
         "empty": ("곧 첫 숙소가 올라와요.", ""),
         # item: dict(name, region, note, date, thumb, links=[(shop, url, label)])
         "items": [
