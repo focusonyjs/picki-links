@@ -17,7 +17,7 @@ PAGES = {
         "title": "베스트피키", "tag": "생활 꿀템",
         "handle": "@bestpicki",
         "bio": "영상에 나온 그 물건, 영상 날짜로 찾으세요.",
-        "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", "영상이 하나 올라갈 때마다 여기에 날짜순으로 한 줄씩 쌓여요."),
+        "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [],
     },
