@@ -98,17 +98,29 @@ background:transparent;font:inherit;font-size:15px;color:var(--ink)}
 STAY_CSS = """
 :root{--paper:#FBEEDD;--ink:oklch(26% .035 245);--sub:oklch(47% .03 220);--line:oklch(87% .025 80);--sea:oklch(64% .1 195)}
 .mast h1{font-family:"Hahmlet",serif;font-weight:700;font-size:38px;letter-spacing:-.03em}
-.stay{margin:34px 20px 0}
+.stay{margin:30px 20px 0}
 .stay .ph{position:relative}
-.stay .ph img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.stay .ph img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px}
 .stay .no{position:absolute;left:-1px;top:14px;padding:3px 10px 3px 9px;background:var(--paper);font-family:"Hahmlet",serif;font-size:13px;font-weight:600}
-.stay .meta{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--sea);letter-spacing:.02em}
+.stay .meta,.srow .meta{font-size:12.5px;font-weight:700;color:var(--sea);letter-spacing:.02em}.stay .meta{margin-top:14px}
 .stay h2{margin:2px 0 6px;font-family:"Hahmlet",serif;font-size:24px;font-weight:600;line-height:1.25;letter-spacing:-.03em}
 .stay p{margin:0;font-size:14.5px;color:var(--sub)}
-.stay ul{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--ink)}
-.stay li a{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.stay li b{font-size:16px}.stay li span{font-size:13px;color:var(--sub);text-align:right}
-.stay li a:active{background:oklch(94% .02 195)}
+.stay ul,.srow ul{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--ink)}
+.stay li a,.srow li a{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.stay li b,.srow li b{font-size:16px}.stay li span,.srow li span{font-size:13px;color:var(--sub);text-align:right}
+.stay li a:active,.srow li a:active{background:oklch(94% .02 195)}
+.more{margin:34px 20px 4px;font-family:"Hahmlet",serif;font-size:15px;font-weight:600}
+.srow{margin:0 20px;border-bottom:1px solid var(--line)}
+.srow summary{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:12px 0;cursor:pointer;list-style:none}
+.srow summary::-webkit-details-marker{display:none}
+.srow summary img{width:64px;aspect-ratio:1;object-fit:cover;border-radius:2px}
+.srow h3{margin:1px 0 0;font-family:"Hahmlet",serif;font-size:17px;font-weight:600;line-height:1.3}
+.srow .pm{font-size:20px;line-height:1;color:var(--sub);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.srow[open] .pm{transform:rotate(45deg)}
+.srow ul{margin:0 0 14px}.srow li:last-child a{border-bottom:0}
+.find{display:block;width:calc(100% - 40px);margin:14px 20px 4px;padding:11px 14px;border:1.5px solid var(--line);border-radius:2px;
+background:transparent;font:inherit;font-size:15px;color:var(--ink)}
+.find:focus{outline:none;border-color:var(--ink)}
 """
 
 
@@ -149,18 +161,31 @@ def shop_body(p):
     return out
 
 
+def stay_links(it):
+    return "".join(f'<li><a href="{e(u)}" rel="sponsored noopener" target="_blank"><b>{SHOP[s]}</b><span>{e(lab)} →</span></a></li>'
+                   for s, u, lab in it["links"])
+
+
 def stay_body(p):
     its = p["items"]
     if not its:
         return empty(p)
-    out = ""
-    for n, it in enumerate(its, 1):
-        links = "".join(f'<li><a href="{e(u)}" rel="sponsored noopener" target="_blank"><b>{SHOP[s]}</b><span>{e(lab)} →</span></a></li>'
-                        for s, u, lab in it["links"])
-        out += (f'<section class="stay rise"><div class="ph"><img src="{e(it["thumb"])}" alt="{e(it["name"])}" width="576" height="720"'
-                f'{"" if n == 1 else " loading=lazy"}><span class="no">No. {len(its) - n + 1:02d}</span></div>'
-                f'<div class="meta">{e(it["region"])} · {e(it["date"])} 영상</div><h2>{e(it["name"])}</h2><p>{e(it["note"])}</p>'
-                f'<ul>{links}</ul></section>')
+    f, rest = its[0], its[1:]
+    out = (f'<section class="stay rise"><div class="ph"><img src="{e(f["thumb"])}" alt="{e(f["name"])}" width="576" height="576">'
+           f'<span class="no">No. {len(its):02d}</span></div>'
+           f'<div class="meta">{e(f["region"])} · {e(f["date"])} 영상</div><h2>{e(f["name"])}</h2><p>{e(f["note"])}</p>'
+           f'<ul>{stay_links(f)}</ul></section>')
+    if rest:
+        # older stays fold into one-line rows; tap opens the shop links
+        out += '<div class="more">지난 숙소</div>'
+        if len(its) >= 12:
+            out += ('<input class="find" type="search" placeholder="지역이나 숙소 이름으로 찾기" aria-label="숙소 찾기" '
+                    'oninput="var q=this.value.trim();document.querySelectorAll(\'.srow\').forEach(function(r){r.hidden=q&&r.dataset.k.indexOf(q)<0})">')
+        for n, it in enumerate(rest, 2):
+            out += (f'<details class="srow" data-k="{e(it["name"] + " " + it["region"])}"><summary>'
+                    f'<img src="{e(it["thumb"])}" alt="" width="64" height="64" loading="lazy">'
+                    f'<div><div class="meta">No. {len(its) - n + 1:02d} · {e(it["region"])}</div><h3>{e(it["name"])}</h3></div>'
+                    f'<span class="pm" aria-hidden="true">+</span></summary><ul>{stay_links(it)}</ul></details>')
     return out
 
 
