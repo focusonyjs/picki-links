@@ -1,7 +1,7 @@
 # Builds bestpicki/index.html and stay/index.html. Add items to PAGES (newest first), run: python3 build.py
 # Thumbnail from a video frame (3:4, keeps the burned-in caption so it looks like the video):
 #   ffmpeg -ss <sec> -i <video.mp4> -frames:v 1 -vf "crop=iw:iw*4/3,scale=360:480" -q:v 3 bestpicki/img/<slug>.jpg
-import html, pathlib
+import hashlib, html, re, pathlib
 
 DISCLOSE = {
     "coupang": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
@@ -215,7 +215,10 @@ def page(key, p):
 def build(root, pages):
     for k, p in pages.items():
         (root / k).mkdir(parents=True, exist_ok=True)
-        (root / k / "index.html").write_text(page(k, p), encoding="utf-8")
+        d = root / k
+        # file-hash query so phones never show a stale image after it is replaced
+        bust = lambda m: f'{m[1]}="{m[2]}?v={hashlib.md5((d / m[2]).read_bytes()).hexdigest()[:8]}"' if (d / m[2]).is_file() else m[0]
+        (d / "index.html").write_text(re.sub(r'(src|href)="([^":?#]+\.(?:jpg|png))"', bust, page(k, p)), encoding="utf-8")
 
 
 if __name__ == "__main__":
