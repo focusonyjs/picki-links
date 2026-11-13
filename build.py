@@ -19,7 +19,14 @@ PAGES = {
         "bio": "영상 속 그 제품, 여기 다 모아뒀어요.",
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
-        "items": [],
+        "items": [
+            dict(name="스코라 물흡수 테이프 (결로 방지)", date="11.13", thumb="img/dew.jpg",
+                 note="창문 유리 아래쪽에 붙이면 흘러내린 물을 머금어요. 영상 속 무늬와 판매 상품(흰색) 디자인은 달라요.",
+                 links=[("naver", "https://naver.me/539dIXgV")]),
+            dict(name="밀스턴 북극 방풍비닐 1.8×1.8m", date="11.12", thumb="img/vinyl.jpg",
+                 note="창틀에 벨크로로 붙였다 뗐다 하는 외풍 차단 비닐이에요.",
+                 links=[("naver", "https://naver.me/xk9E8OKz")]),
+        ],
     },
     "stay": {
         "kind": "stay",
