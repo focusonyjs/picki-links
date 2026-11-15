@@ -20,6 +20,12 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="마운틴하이커 분리형 양손 손난로", date="11.16", thumb="img/warmer.jpg",
+                 note="충전해서 쓰는 손난로예요. 가운데를 당기면 둘로 나뉘고, 자석으로 다시 붙어요.",
+                 links=[("naver", "https://naver.me/FuNbgW0r")]),
+            dict(name="꿀템공장 끼우는 문풍지 (문 하단 바람막이)", date="11.14", thumb="img/door.jpg",
+                 note="문 아래에 끼우는 양면 바람막이예요. 접착제 없이 끼워서 떼기도 쉬워요.",
+                 links=[("naver", "https://naver.me/GvWPy9Sf")]),
             dict(name="스코라 물흡수 테이프 (결로 방지)", date="11.13", thumb="img/dew.jpg",
                  note="창문 유리 아래쪽에 붙이면 흘러내린 물을 머금어요. 영상 속 무늬와 판매 상품(흰색) 디자인은 달라요.",
                  links=[("naver", "https://naver.me/539dIXgV")]),
