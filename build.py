@@ -20,6 +20,9 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="라슈에뜨 자석 키친타올 홀더 (냉장고 선반)", date="11.17", thumb="img/tissue.jpg",
+                 note="냉장고 옆면에 자석으로 붙이는 홀더예요. 둘로 나뉘어서 폭을 맞춰 붙이면 키친타월 롤과 물티슈가 올라가요.",
+                 links=[("naver", "https://naver.me/5AuvVRlT")]),
             dict(name="마운틴하이커 분리형 양손 손난로", date="11.16", thumb="img/warmer.jpg",
                  note="충전해서 쓰는 손난로예요. 가운데를 당기면 둘로 나뉘고, 자석으로 다시 붙어요.",
                  links=[("naver", "https://naver.me/FuNbgW0r")]),
