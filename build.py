@@ -20,6 +20,9 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="가온 앞유리 성에방지 커버 SB101", date="11.19", thumb="img/car.jpg",
+                 note="자기 전에 앞유리에 덮어 두고 아침에 걷어내면 성에 긁을 일이 없어요. 영상 속 상품과 구성이 조금 다를 수 있으니 상품 상세에서 확인해 주세요.",
+                 links=[("naver", "https://naver.me/FBMTxHPE")]),
             dict(name="오르골 스노우볼 랜턴 (옵션 '트리')", date="11.18", thumb="img/snow.jpg",
                  note="불을 켜면 랜턴 안에서 눈이 날리고 오르골이 울려요. 영상 속 디자인은 옵션에서 '트리'를 고르면 돼요.",
                  links=[("naver", "https://naver.me/F6QXiKPZ")]),
