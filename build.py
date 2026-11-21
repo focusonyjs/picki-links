@@ -20,6 +20,9 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="USB 발열 슬리퍼", date="11.21", thumb="img/slip.jpg",
+                 note="책상 밑에서 발 시릴 때 선을 연결해 신는 발열 슬리퍼예요. 영상 속 색과 구성은 상품과 다를 수 있으니 상품 상세에서 확인해 주세요.",
+                 links=[("naver", "https://naver.me/FAAUEld7")]),
             dict(name="크리스마스 커튼 전구 3m", date="11.20", thumb="img/curtain.jpg",
                  note="창문 커튼봉에 걸어 두는 3m 줄조명이에요. 영상 속 불빛 모드와 구성은 상품과 다를 수 있으니 상품 상세에서 확인해 주세요.",
                  links=[("naver", "https://naver.me/G0ptsLOY")]),
