@@ -8,8 +8,9 @@ DISCLOSE = {
     "naver": "이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로, 판매 발생 시 수수료를 제공받습니다.",
     "toss": "이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
     "mrt": "이 포스팅은 마이리얼트립 마케팅 파트너 활동의 일환으로, 이에 따른 수수료를 제공받습니다.",
+    "agoda": "세시간전 크리에이터 활동을 통해 수익이 발생하는 링크가 포함되어 있습니다. 해당 링크를 통해 상품을 구매할 경우 수수료가 지급됩니다.",
 }
-SHOP = {"coupang": "쿠팡", "naver": "네이버", "toss": "토스쇼핑", "mrt": "마이리얼트립"}
+SHOP = {"coupang": "쿠팡", "naver": "네이버", "toss": "토스쇼핑", "mrt": "마이리얼트립", "agoda": "아고다"}
 
 PAGES = {
     "bestpicki": {
@@ -60,6 +61,10 @@ PAGES = {
         "empty": ("곧 첫 숙소가 올라와요.", ""),
         # item: dict(name, region, note, date, thumb, links=[(shop, url, label)])
         "items": [
+            dict(name="신라스테이 해운대 오션뷰 객실", region="부산 해운대", date="11월",
+                 note="이름 끝에 '오션뷰'가 붙은 객실을 골라 보세요. 날짜를 넣으면 가격이 나와요.",
+                 thumb="img/shilla-haeundae.jpg",
+                 links=[("agoda", "https://3ha.in/r/911323", "오션뷰 객실 보기")]),
             dict(name="양양 클리프비치 리조트&풀빌라", region="강원 양양", date="11월",
                  note="전 객실 오션뷰, 빌라동 온수 자쿠지. 객실·전망은 배정에 따라 달라요.",
                  thumb="img/cliffbeach.jpg",
