@@ -118,6 +118,8 @@ clip-path:polygon(8px 0,100% 0,100% 100%,8px 100%,0 50%)}
 .feat h2{margin:6px 0 6px;font-size:22px;line-height:1.25}
 .feat p{margin:0 0 14px;font-size:14px}
 .buy{display:inline-block;padding:9px 14px;background:var(--ink);color:var(--sun);font-weight:800;font-size:14px;border-radius:999px}
+.cshop{display:block;margin:22px 20px 0;padding:16px 18px;background:var(--ink);color:var(--sun);border-radius:12px;text-decoration:none;font-weight:800;font-size:17px}
+.cshop span{display:block;margin-top:2px;font-size:13px;font-weight:600;color:var(--paper)}
 .feat:active .buy,.row:active{opacity:.85}
 .more{margin:30px 20px 4px;font-size:13px;font-weight:800;color:var(--sub)}
 .row{display:grid;grid-template-columns:66px 1fr auto;gap:14px;align-items:center;margin:0 20px;padding:14px 0;
@@ -225,6 +227,10 @@ def stay_body(p):
     return out
 
 
+CSHOP = ('<a class="cshop rise" href="https://cshop.naver.com/bestpicki" rel="sponsored noopener" target="_blank">'
+         '베스트피키 크리에이터샵 →<span>영상 속 상품을 컬렉션으로 한곳에 모아 뒀어요</span></a>')
+
+
 def page(key, p):
     shop = p["kind"] == "shop"
     gfont = "Gasoek+One" if shop else "Hahmlet:wght@600;700"
@@ -242,6 +248,7 @@ def page(key, p):
 <div class="mast rise"><img src="logo.png" alt=""><h1>{e(p["title"])}</h1><span class="tag">{e(p["tag"])}</span></div></header>
 <div class="intro"><div class="handle">{e(p["handle"])}</div><p>{e(p["bio"])}</p></div>
 {ad_block(items)}
+{CSHOP if shop else ""}
 {body}
 <footer>{note}<br>{e(p["handle"])}</footer>
 </main></body></html>
