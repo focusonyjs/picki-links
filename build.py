@@ -21,6 +21,9 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="핸디 스팀다리미", date="11.24", thumb="img/steam.jpg",
+                 note="물을 채우고 전원을 켜면 스팀이 나오는 접이식 핸디 스팀다리미예요. 옷걸이에 건 채로 주름을 펴고, 손잡이를 접어 여행 가방에 넣어요. 영상 속 분홍색과 달리 판매 상품은 색이 다를 수 있으니 상품 상세에서 확인해 주세요.",
+                 links=[("naver", "https://naver.me/G3vcjyA5")]),
             dict(name="전동 와인 오프너", date="11.23", thumb="img/wine.jpg",
                  note="병 위에 올리고 버튼만 누르면 코르크가 올라오는 충전식 와인 오프너예요. 영상 속 색(버건디·블랙)과 달리 판매 상품은 실버예요. 상품 상세에서 확인해 주세요.",
                  links=[("naver", "https://naver.me/G5kMejbG")]),
