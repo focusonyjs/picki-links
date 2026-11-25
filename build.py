@@ -21,6 +21,9 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="글라스 LED 캔들", date="11.25", thumb="img/candle.jpg",
+                 note="유리 통 안에서 불꽃이 촛불처럼 흔들리는 건전지식 LED 캔들이에요. 불 붙일 일이 없어서 연말 식탁에 올려 두기 편해요. 건전지(AAA)는 따로 필요하고, 색과 크기는 상품 상세에서 골라 주세요.",
+                 links=[("naver", "https://naver.me/5QsgYvJK")]),
             dict(name="핸디 스팀다리미", date="11.24", thumb="img/steam.jpg",
                  note="물을 채우고 전원을 켜면 스팀이 나오는 접이식 핸디 스팀다리미예요. 옷걸이에 건 채로 주름을 펴고, 손잡이를 접어 여행 가방에 넣어요. 영상 속 분홍색과 달리 판매 상품은 색이 다를 수 있으니 상품 상세에서 확인해 주세요.",
                  links=[("naver", "https://naver.me/G3vcjyA5")]),
