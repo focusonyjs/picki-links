@@ -70,6 +70,10 @@ PAGES = {
         "empty": ("곧 첫 숙소가 올라와요.", ""),
         # item: dict(name, region, note, date, thumb, links=[(shop, url, label)])
         "items": [
+            dict(name="정동진 썬크루즈 일출 하프오션뷰 더블", region="강원 강릉", date="11월",
+                 note="같은 객실이 12/25(금) 50만원대, 12/27(일) 18만원대로 날짜마다 달라요(11/26 아고다 확인, 세금·봉사료 별도). 날짜를 넣어 비교해 보세요.",
+                 thumb="img/jeongdongjin.jpg",
+                 links=[("agoda", "https://3ha.in/r/960289", "크리스마스 연휴 날짜별 가격 보기")]),
             dict(name="신라스테이 해운대 오션뷰 객실", region="부산 해운대", date="11월",
                  note="이름 끝에 '오션뷰'가 붙은 객실을 골라 보세요. 날짜를 넣으면 가격이 나와요.",
                  thumb="img/shilla-haeundae.jpg",
