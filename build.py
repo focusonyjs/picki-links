@@ -21,6 +21,9 @@ PAGES = {
         "empty": ("첫 꿀템은 11월 12일 저녁에 올라와요.", ""),
         # item: dict(name, note, date "11.12", thumb "img/x.jpg", links=[(shop, url)])
         "items": [
+            dict(name="전기 방석", date="11.27", thumb="img/seat.jpg",
+                 note="의자에 끈으로 묶어 쓰는 등받이 일체형 전기 방석이에요. 전원을 연결해서 쓰고, 옵션에서 색(다크핑크 등)과 온열 옵션(스마트 디지털 듀얼 타이머 온열)을 꼭 골라 주세요. 해외직배송이라 배송은 상품 상세에서 확인해 주세요.",
+                 links=[("naver", "https://naver.me/GkINC6Wu")]),
             dict(name="글라스 LED 캔들", date="11.25", thumb="img/candle.jpg",
                  note="유리 통 안에서 불꽃이 촛불처럼 흔들리는 건전지식 LED 캔들이에요. 불 붙일 일이 없어서 연말 식탁에 올려 두기 편해요. 건전지(AAA)는 따로 필요하고, 색과 크기는 상품 상세에서 골라 주세요.",
                  links=[("naver", "https://naver.me/5QsgYvJK")]),
